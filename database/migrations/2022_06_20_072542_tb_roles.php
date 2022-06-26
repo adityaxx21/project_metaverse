@@ -20,6 +20,11 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('is_deleted')->default(1);
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('role_id')->references('id')->on('tb_users_roles');
+        });
+
     }
 
     /**

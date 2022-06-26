@@ -11,4 +11,8 @@ class user_roles extends Model
     protected $table = 'tb_users_roles';
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
+    
+    public function Post(){
+        return $this->hasMany(user_roles::class);
+    }
 }

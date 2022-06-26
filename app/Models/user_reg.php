@@ -36,6 +36,12 @@ class user_reg extends Model
         'email_verified_at' => 'datetime',
     ];
 
+    public function Roles()
+    {
+        return $this->belongsTo(user_roles::class);
+    }
+
+    
     // const CREATED_AT = 'creation_date';
     // const UPDATED_AT = 'updated_date';
 }

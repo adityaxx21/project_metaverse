@@ -20,11 +20,14 @@
                             </div>
 
                             <div class="col col-lg-2">
-                                <div class="input-group">
-                                    <span class="input-group-text text-body search" style="z-index:0"><i
-                                            class="fas fa-search" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" placeholder="Type here...">
-                                </div>
+                                    <form class="input-group" action="/kelolaMetaland" method="get">
+                                        @csrf
+                                        <span class="input-group-text text-body search" style="z-index:0"><i
+                                                class="fas fa-search" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" placeholder="Type here..."
+                                            name="search_me">
+                                        <input type="submit" hidden />
+                                    </form>
                             </div>
                         </div>
 
@@ -189,7 +192,7 @@
                                             </td>
                                             <td class="align-middle text-center text-sm">
                                                 <h6 class="mb-0 text-sm"><i class="fa-brands fa-ethereum"></i>
-                                                   {{ '  '.$item->price }}</h6>
+                                                    {{ '  ' . $item->price }}</h6>
                                             </td>
                                             <td class="align-middle text-center">
                                                 <span
@@ -209,10 +212,10 @@
                                     @endforeach
                                     <form action="/delete_landmark" method="POST" id="delete_it">
                                         @csrf
-                                        <input type="hidden" name="id_data" id="id_data" value="{{$item->id}}">
+                                        <input type="hidden" name="id_data" id="id_data" value="{{ isset($item->id) ? $item->id : "" }}">
                                     </form>
                                 </tbody>
-                                
+
                             </table>
                         </div>
 
@@ -220,17 +223,24 @@
                         <nav aria-label="Page navigation example" style="margin-top: 20px">
                             <ul class="pagination justify-content-end">
                                 <form action="/kelolaMetaland" method="get" id="findpage">
-                                @csrf
-                                <input type="hidden" name="page" id="page">
+                                    @csrf
+                                    <input type="hidden" name="page" id="page">
                                 </form>
                                 <li class="page-item">
-                                    <a class="page-link" href="javascript:{{$pagin." ".$page_now}};" onclick="pagination({{ ($page_now == null ? 1 : $page_now) <= 1 ? $page_now : $page_now - 1 }})"> < </a>
+                                    <a class="page-link" href="javascript:{{ $pagin . ' ' . $page_now }};"
+                                        onclick="pagination({{ ($page_now == null ? 1 : $page_now) <= 1 ? $page_now : $page_now - 1 }})">
+                                        < </a>
                                 </li>
                                 @for ($i = 1; $i <= $pagin; $i++)
-                                <li class="page-item"><a class="page-link {{$i == ($page_now == null ? 1 : $page_now) ? "active" : ""}}" href="javascript:;" onclick="pagination({{$i}})">{{$i}}</a></li>
+                                    <li class="page-item"><a
+                                            class="page-link {{ $i == ($page_now == null ? 1 : $page_now) ? 'active' : '' }}"
+                                            href="javascript:;"
+                                            onclick="pagination({{ $i }})">{{ $i }}</a></li>
                                 @endfor
                                 <li class="page-item">
-                                    <a class="page-link" href="javascript:{{$pagin." ".$page_now}};" onclick="pagination({{$pagin == $page_now ? $page_now : ($page_now == null ? $page_now+2 :  $page_now+1)}})"> > </a>
+                                    <a class="page-link" href="javascript:{{ $pagin . ' ' . $page_now }};"
+                                        onclick="pagination({{ $pagin == $page_now ? $page_now : ($page_now == null ? $page_now + 2 : $page_now + 1) }})">
+                                        > </a>
                                 </li>
                             </ul>
                         </nav>
@@ -271,6 +281,7 @@
                 }
             });
         }
+
         function delete_landmark(id) {
             $('#id_data').val(id);
             $('#delete_it').submit();

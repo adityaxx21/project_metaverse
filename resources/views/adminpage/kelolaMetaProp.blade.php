@@ -20,12 +20,15 @@
                             </div>
 
                             <div class="col col-lg-2">
-                                <div class="input-group">
+                                <form class="input-group" action="/kelolaMetaprop" method="get">
+                                    @csrf
                                     <span class="input-group-text text-body search" style="z-index:0"><i
                                             class="fas fa-search" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" id="search" placeholder="Type here...">
-                                </div>
-                            </div>
+                                    <input type="text" class="form-control" placeholder="Type here..."
+                                        name="search_me">
+                                    <input type="submit" hidden />
+                                </form>
+                        </div>
                         </div>
 
 
@@ -211,7 +214,7 @@
                                     @endforeach
                                     <form action="/delete_properties" method="POST" id="delete_it">
                                         @csrf
-                                        <input type="hidden" name="id_data" id="id_data" value="{{ $item->id }}">
+                                        <input type="hidden" name="id_data" id="id_data" value="{{ isset($item->id) ?  $item->id : "" }}">
                                     </form>
                                 </tbody>
                             </table>

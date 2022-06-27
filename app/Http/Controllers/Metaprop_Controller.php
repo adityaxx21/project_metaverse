@@ -11,10 +11,16 @@ class Metaprop_Controller extends Controller
     var $location = 'properties';
     public function index(Request $request)
     {
+        $search = $request->search_me;
+        if ($search != null) {
+            $cond = [['is_deleted', 1], ['title', 'LIKE', '%' . $search . '%']];
+        } else {
+            $cond = [['is_deleted', 1]];
+        }
         $page = 3;
         $data['Page'] = "Kelola Metavers Properti";
-        $data['properties'] = prop_metaverse::where('is_deleted', 1)->paginate($page);
-        $data['get_total'] = prop_metaverse::where('is_deleted', 1)->count();
+        $data['properties'] = prop_metaverse::where($cond)->paginate($page);
+        $data['get_total'] = prop_metaverse::where($cond)->count();
         $data['page_now'] = $request->page;
         $data['search'] = $request->page;
         $round = ceil($data['get_total'] / $page);

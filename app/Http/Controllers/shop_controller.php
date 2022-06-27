@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 
 class shop_controller extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data['land'] = maps_metaverse::get();
-        $data['properties'] = prop_metaverse::get();
+        $search = $request->search_me;
+        if ($search != null) {
+            $cond = [['is_deleted',1],['title','LIKE','%'.$search.'%']] ;
+        } else {
+            $cond = [['is_deleted',1]];
+        }
+        $data['land'] = maps_metaverse::where($cond)->get();
+        $data['properties'] = prop_metaverse::where($cond)->get();
         return view('userpage.shop',$data);
     }
 }

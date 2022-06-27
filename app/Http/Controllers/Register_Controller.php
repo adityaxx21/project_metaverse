@@ -14,6 +14,8 @@ class Register_Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    var $location = 'userimg';
+
     public function login_view(Request $request)
     {
         $data['tittle'] = "Welcome To MetaWorld";
@@ -41,12 +43,13 @@ class Register_Controller extends Controller
                 session(['name' => $value->name]);
                 session(['gambar' => $value->picture]);
                 session(['hak_akses' => $value->role]);
+                if ($value->role_id == 1) {
+                    return redirect('/adminpage');
+                } elseif ($value->role_id == 2) {
+                    return redirect('/');
+                }
             }
-            if ($value->role_id == 1) {
-                return redirect('/adminpage');
-            } elseif ($value->role_id == 2) {
-                return redirect('/');
-            }
+            
         }
             // print_r($get_data);
         return redirect('/login');
@@ -103,6 +106,7 @@ class Register_Controller extends Controller
         $password = $request->password_register;
         $email = $request->email_register;
         $name = $request->name_register;
+        
         $user = [
             'username' => $uname,
             'email' => $email,
@@ -126,6 +130,7 @@ class Register_Controller extends Controller
 
     public function updateAccountUser(Request $request)
     {
+        $location = 'userimg';
         if (session()->get('username') == "") {
             return redirect('/login')->with('alert-notif', 'Anda Harus Login Terlebih Dahulu');
         }
@@ -134,17 +139,23 @@ class Register_Controller extends Controller
         $password = $request->password_register;
         $email = $request->email_register;
         $name = $request->name_register;
+        $phone_number = $request->phone_register;
+        $address = $request->address_register;
+        $gender = $request->gender_register;
         $user = [
             'username' => $uname,
             'email' => $email,
             'name' => $name,
+            'phone_number' => $phone_number,
+            'address' => $address,
+            'gender' => $gender,
             'updated_at' => date("Y-m-d H:i:s"),
         ];
         if ($password != null) {
             $user = array_merge($user, ['password' => md5($password)]);
         }
         try {
-            $name_img =  $request->file('img_land')->getClientOriginalName();
+            $name_img =  $request->file('name_img')->getClientOriginalName();
         } catch (\Throwable $th) {
             $name_img = "";
         }
@@ -152,8 +163,8 @@ class Register_Controller extends Controller
             $img_loc = "/storage/image/" . $this->location . "/";
             $img_save = "/public/image/" . $this->location . "/";
 
-            $request->file('img_land')->storeAs($img_save, $name_img);
-            $user = array_merge($user, array('image' =>  $img_loc . $name_img));
+            $request->file('name_img')->storeAs($img_save, $name_img);
+            $user = array_merge($user, array('picture' =>  $img_loc . $name_img));
         }
         user_reg::where('id', $id)->update($user);
         $is_account = user_reg::where('username', session()->get('username'))->value('role_id');
@@ -161,7 +172,7 @@ class Register_Controller extends Controller
             $request->session()->flush();
             return redirect('/login')->with('alert-notif', 'Perubahan Akun Berhasil, Anda Harus Login terlebih dahulu');
         } else {
-            return redirect('/dunno')->with('alert-notif', 'Perubahan Akun Berhasil');
+            return redirect('/profile')->with('alert-notif', 'Perubahan Akun Berhasil');
         }
     }
 
@@ -187,10 +198,16 @@ class Register_Controller extends Controller
 
     public function kelola_akun(Request $request)
     {
+        $search = $request->search_me;
+        if ($search != null) {
+            $cond = [['is_deleted', 1], ['name', 'LIKE', '%' . $search . '%']];
+        } else {
+            $cond = [['is_deleted', 1]];
+        }
         $page = 4;
         $data['Page'] = "Kelola Akun";
-        $data['user'] = user_reg::where('is_deleted', 1)->paginate($page);
-        $data['get_total'] = user_reg::where('is_deleted', 1)->count();
+        $data['user'] = user_reg::where($cond)->paginate($page);
+        $data['get_total'] = user_reg::where($cond)->count();
         $data['page_now'] = $request->page;
         $data['search'] = $request->page;
         $round = ceil($data['get_total'] / $page);

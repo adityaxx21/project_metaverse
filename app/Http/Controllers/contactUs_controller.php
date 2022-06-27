@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\contactUs_Mail;
+use App\Mail\SendEmail;
 use App\Models\tb_mail;
 use App\Models\user_reg;
 use Illuminate\Http\Request;
@@ -36,6 +37,12 @@ class contactUs_controller extends Controller
 
         public function profile()
         {
+            $data['user'] = user_reg::where([['is_deleted',1],['username',session()->get('username')]])->first();
+           return view('userpage.profile',$data);
+        }
+
+        public function profile_post()
+        {
             $data['user'] = user_reg::where([['is_deleted',1],['role_id',2]])->first();
            return view('userpage.profile',$data);
         }
@@ -53,17 +60,40 @@ class contactUs_controller extends Controller
             return view("adminpage.contactUs",$data);
         }
 
+        public function contactUs_post(Request $request)
+        {
+            $name = $request->name;
+            $email = $request->email;
+            $message = $request->message;
+            $get_data = [
+                'username' => $name,
+                'email' => $email,
+                'message' => $message
+            ];
+            tb_mail::create($get_data);
+            return redirect('/contactUs');
+        }
+
         public function answereMail(Request $request)
         {
             if (session()->get('username') == "") {
                 return redirect('/login')->with('alert-notif', 'Anda Harus Login Terlebih Dahulu');
             }
             $id =  $request->id;
+            $email = $request->name;
+            $reply = $request->reply;
             $get_data = [
                 'status' =>  2,
                 'updated_at' => date("Y-m-d H:i:s"),
             ];
+            $data = [
+                "title" => 'Balasan LandMetaverse.com',
+                'body' => $reply
+            ];
+            // echo $email;
+            Mail::to($email)->send(new contactUs_Mail($data));
             tb_mail::where('id', $id)->update($get_data);
+
             return redirect('contactUs_admin');
         }
 

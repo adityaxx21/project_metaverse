@@ -13,10 +13,14 @@
         <div class="card-header pb-0 p-3">
           <div class="row mx-4">
             <div class="col mt-4">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search popular Land's or Property's..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn bg-gradient-primary btn-primary mb-0" type="button" id="button-search">Search</button>
-              </div>
+              
+                <form action="/shop" method="GET" class="input-group mb-3">
+                @csrf
+                <input type="text" class="form-control" placeholder="Search popular Land's or Property's..." name="search_me" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn bg-gradient-primary btn-primary mb-0" type="submit" id="button-search">Search</button>
+                </form>
+                
+              
             </div>
           </div>
         </div>

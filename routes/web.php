@@ -67,6 +67,7 @@ Route::post('/delete_properties', [Metaprop_Controller::class, 'delete_propertie
 Route::get('/', [userDashboard_controller::class, 'index'])->name('home');
 Route::get('/shop', [shop_controller::class, 'index'])->name('shop');
 Route::get('/contactUs', [contactUs_controller::class, 'index'])->name('contactUs');
+Route::post('/contactUs', [contactUs_controller::class, 'contactUs_post'])->name('contactUs');
 Route::get('/profile',[contactUs_controller::class,'profile'])->name('profile');
 Route::get('/faq',[contactUs_controller::class,'faq'])->name('faq');
 Route::get('/logout',[Register_Controller::class,'logout']);

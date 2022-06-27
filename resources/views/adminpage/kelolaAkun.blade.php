@@ -20,11 +20,13 @@
                             </div>
 
                             <div class="col col-lg-2">
-                                <div class="input-group">
-                                    <span class="input-group-text text-body" style="z-index:0"><i class="fas fa-search"
-                                            aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" placeholder="Type here...">
-                                </div>
+                                <form class="input-group" action="/kelolaAkun" method="get">
+                                    @csrf
+                                    <span class="input-group-text text-body search" style="z-index:0"><i
+                                            class="fas fa-search" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="Type here..." name="search_me">
+                                    <input type="submit" hidden />
+                                </form>
                             </div>
                         </div>
 

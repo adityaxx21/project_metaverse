@@ -12,11 +12,13 @@
                         <div class="row" style="margin:20px">
 
                             <div class="col col-lg-2">
-                                <div class="input-group">
+                                <form class="input-group" action="/contactUs_admin" method="get">
+                                    @csrf
                                     <span class="input-group-text text-body search" style="z-index:0"><i
                                             class="fas fa-search" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" placeholder="Type here...">
-                                </div>
+                                    <input type="text" class="form-control" placeholder="Type here..." name="search_me">
+                                    <input type="submit" hidden />
+                                </form>
                             </div>
                         </div>
 
@@ -63,8 +65,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn bg-gradient-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button class="btn bg-gradient-primary"
-                                            onclick="$('#updateMetaland').submit()">Save changes</button>
+                                        <button class="btn bg-gradient-primary" onclick="$('#updateMetaland').submit()">Save
+                                            changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -102,14 +104,18 @@
                                                 <h6 class="mb-0 text-sm">{{ $item->email }}</h6>
                                             </td>
                                             <td>
-                                                <h6 class="mb-0 text-sm" style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:200px;">{{ $item->message }}</h6>
+                                                <h6 class="mb-0 text-sm"
+                                                    style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:200px;">
+                                                    {{ $item->message }}</h6>
                                             </td>
                                             <td class="align-middle text-center">
                                                 <span
                                                     class="text-secondary text-xs font-weight-bold">{{ date('d-m-Y', strtotime($item->created_at)) }}</span>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm  {{ $item->status == 1 ? 'bg-gradient-warning' : 'bg-gradient-success' }}"> {{ $item->status == 2 ? 'Answered' : 'Unanswered' }}</span>
+                                                <span
+                                                    class="badge badge-sm  {{ $item->status == 1 ? 'bg-gradient-warning' : 'bg-gradient-success' }}">
+                                                    {{ $item->status == 2 ? 'Answered' : 'Unanswered' }}</span>
                                             </td>
                                             <td class="align-middle">
                                                 <button type="button" class="btn btn-warning"
@@ -123,12 +129,13 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                    <form action="/delete_landmark" method="POST" id="delete_it">
+                                    <form action="/contactUs_delete" method="post" id="delete_it">
                                         @csrf
-                                        <input type="hidden" name="id_data" id="id_data" value="{{$item->id}}">
+                                        <input type="hidden" name="id_data" id="id_data"
+                                            value="{{ isset($item->id) ? $item->id : '' }}">
                                     </form>
                                 </tbody>
-                                
+
                             </table>
                         </div>
 
@@ -136,17 +143,24 @@
                         <nav aria-label="Page navigation example" style="margin-top: 20px">
                             <ul class="pagination justify-content-end">
                                 <form action="/contactUs_admin" method="get" id="findpage">
-                                @csrf
-                                <input type="hidden" name="page" id="page">
+                                    @csrf
+                                    <input type="hidden" name="page" id="page">
                                 </form>
                                 <li class="page-item">
-                                    <a class="page-link" href="javascript:{{$pagin." ".$page_now}};" onclick="pagination({{ ($page_now == null ? 1 : $page_now) <= 1 ? $page_now : $page_now - 1 }})"> < </a>
+                                    <a class="page-link" href="javascript:{{ $pagin . ' ' . $page_now }};"
+                                        onclick="pagination({{ ($page_now == null ? 1 : $page_now) <= 1 ? $page_now : $page_now - 1 }})">
+                                        < </a>
                                 </li>
                                 @for ($i = 1; $i <= $pagin; $i++)
-                                <li class="page-item"><a class="page-link {{$i == ($page_now == null ? 1 : $page_now) ? "active" : ""}}" href="javascript:;" onclick="pagination({{$i}})">{{$i}}</a></li>
+                                    <li class="page-item"><a
+                                            class="page-link {{ $i == ($page_now == null ? 1 : $page_now) ? 'active' : '' }}"
+                                            href="javascript:;"
+                                            onclick="pagination({{ $i }})">{{ $i }}</a></li>
                                 @endfor
                                 <li class="page-item">
-                                    <a class="page-link" href="javascript:{{$pagin." ".$page_now}};" onclick="pagination({{$pagin == $page_now ? $page_now : ($page_now == null ? $page_now+2 :  $page_now+1)}})"> > </a>
+                                    <a class="page-link" href="javascript:{{ $pagin . ' ' . $page_now }};"
+                                        onclick="pagination({{ $pagin == $page_now ? $page_now : ($page_now == null ? $page_now + 2 : $page_now + 1) }})">
+                                        > </a>
                                 </li>
                             </ul>
                         </nav>
@@ -185,6 +199,7 @@
                 }
             });
         }
+
         function delete_landmark(id) {
             $('#id_data').val(id);
             $('#delete_it').submit();

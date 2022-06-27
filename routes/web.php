@@ -35,6 +35,7 @@ Route::get('/logout', [Register_Controller::class, 'logout']);
 
 
 Route::get('/contactUs_admin', [contactUs_controller::class, 'admin_side']);
+Route::post('/contactUs_delete', [contactUs_controller::class, 'delete_contact_us']);
 Route::get('/getData_mail/{id}', [contactUs_controller::class, 'getData']);
 Route::post('/answereMail', [contactUs_controller::class, 'answereMail']);
 
@@ -72,12 +73,3 @@ Route::get('/profile',[contactUs_controller::class,'profile'])->name('profile');
 Route::get('/faq',[contactUs_controller::class,'faq'])->name('faq');
 Route::get('/logout',[Register_Controller::class,'logout']);
 // User End Here
-
-Route::group(['middleware' => ['auth']], function () {
-    Route::group(['middleware' => ['login_check:0']], function () {
-        Route::resource('admin', AdminController::class);
-    });
-    Route::group(['middleware' => ['login_check:1']], function () {
-        Route::resource('editor', AdminController::class);
-    });
-});

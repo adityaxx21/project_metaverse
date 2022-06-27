@@ -37,6 +37,9 @@ class contactUs_controller extends Controller
 
         public function profile()
         {
+            if (session()->get('username') == "") {
+                return redirect('/login')->with('alert-notif', 'Anda Harus Login Terlebih Dahulu');
+            }
             $data['user'] = user_reg::where([['is_deleted',1],['username',session()->get('username')]])->first();
            return view('userpage.profile',$data);
         }
@@ -49,10 +52,16 @@ class contactUs_controller extends Controller
 
         public function admin_side(Request $request)
         {
+            $search = $request->search_me;
+            if ($search != null) {
+                $cond = [['is_deleted', 1], ['username', 'LIKE', '%' . $search . '%']];
+            } else {
+                $cond = [['is_deleted', 1]];
+            }
             $page = 3;
             $data['Page'] = "Kelola Email";
-            $data['mail'] = tb_mail::where('is_deleted', 1)->paginate($page);
-            $data['get_total'] = tb_mail::where('is_deleted', 1)->count();
+            $data['mail'] = tb_mail::where($cond)->paginate($page);
+            $data['get_total'] = tb_mail::where($cond)->count();
             $data['page_now'] = $request->page;
             $data['search'] = $request->page;
             $round = ceil($data['get_total'] / $page);
@@ -72,6 +81,14 @@ class contactUs_controller extends Controller
             ];
             tb_mail::create($get_data);
             return redirect('/contactUs');
+        }
+
+        public function delete_contact_us(Request $request)
+        {
+            $id = $request->id_data;
+            // echo($id);
+            tb_mail::where('id', $id)->update(['is_deleted' => 0]);
+            return redirect('contactUs_admin');
         }
 
         public function answereMail(Request $request)

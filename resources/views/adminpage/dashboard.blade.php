@@ -74,10 +74,10 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Asset</p>
+                                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Email Masuk</p>
                                     <h5 class="font-weight-bolder mb-0">
-                                        {{$total_land + $total_prop}}
-                                        <span class="text-success text-sm font-weight-bolder">+ {{$land_add_today == null && $prop_add_today == null ? 0 : $land_add_today + $prop_add_today}}</span>
+                                        {{$total_contact}}
+                                        <span class="text-success text-sm font-weight-bolder">+ {{$contact_add_today == null ? 0 : $contact_add_today}}</span>
                                     </h5>
                                 </div>
                             </div>
@@ -100,6 +100,7 @@
         </div>
 
     </div>
+    
     </div>
 
     </div>

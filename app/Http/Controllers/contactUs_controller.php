@@ -8,6 +8,7 @@ use App\Models\tb_mail;
 use App\Models\user_reg;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Dompdf\Dompdf;
 
 class contactUs_controller extends Controller
 {
@@ -118,5 +119,35 @@ class contactUs_controller extends Controller
         {
             $data['data'] = tb_mail::where([['id', $id], ['is_deleted', 1]])->first();
             return Response()->json($data);
+        }
+
+        public function contactUs_print(Request $request)
+        {
+                   // $this->laporan_transaksi($request);
+        // mengambil data dari session untuk diprint dalam bentuk dokumen
+
+        // $data['gambar'] = $request->input('cavas_here');
+        // $data['jumlah_pengunjung'] = 0;
+        // foreach ($data['transaksi'] as $value) {
+        //     $data['jumlah_pengunjung'] += $value->jumlah_tiket_dewasa + $value->jumlah_tiket_anak;
+        // }
+        $data['mail'] = tb_mail::where('id', $request->id_data1)->get();
+    // print_r($data['jenislaporan']);
+        $view = view("adminpage.laporan.downloadLaporan",$data);
+
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream("Laporan Transaksi");
+        return view("adminpage.laporan.downloadLaporan",$data);
+        // return redirect('/');
         }
 }

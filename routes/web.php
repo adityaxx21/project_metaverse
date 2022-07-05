@@ -38,6 +38,7 @@ Route::get('/contactUs_admin', [contactUs_controller::class, 'admin_side']);
 Route::post('/contactUs_delete', [contactUs_controller::class, 'delete_contact_us']);
 Route::get('/getData_mail/{id}', [contactUs_controller::class, 'getData']);
 Route::post('/answereMail', [contactUs_controller::class, 'answereMail']);
+Route::get('/contactUs_print', [contactUs_controller::class, 'contactUs_print']);
 
 
 // Route::get('/auth', function () {

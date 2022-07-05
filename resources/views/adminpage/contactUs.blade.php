@@ -120,25 +120,31 @@
                                             <td class="align-middle">
                                                 <button type="button" class="btn btn-warning"
                                                     onclick="get_data({{ $item->id }})"><i
-                                                        class="fa-solid fa-file-pen"></i>
-                                                    Update Data</button>
+                                                        class="fa-solid fa-file-pen"></i> Update Data</button>
                                                 <button type="button" class="btn btn-danger"
                                                     onclick="delete_landmark({{ $item->id }})"> <i
-                                                        class="fa-solid fa-ban"></i>
-                                                    Delete Data</button>
+                                                        class="fa-solid fa-ban"></i> Delete Data</button>
+                                                    <button type="button" class="btn btn-primary"
+                                                    onclick="print_contacUs({{ $item->id }})"> <i
+                                                        class="fa-solid fa-print"></i> Cetak Data</button>
                                             </td>
                                         </tr>
                                     @endforeach
                                     <form action="/contactUs_delete" method="post" id="delete_it">
                                         @csrf
                                         <input type="hidden" name="id_data" id="id_data"
-                                            value="{{ isset($item->id) ? $item->id : '' }}">
+                                            value="">
                                     </form>
                                 </tbody>
 
                             </table>
+                            <form action="/contactUs_print" method="get" id="print_it">
+                                @csrf
+                                <input type="hidden" name="id_data1" id="id_data1"
+                                    value="">
+                            </form>
                         </div>
-
+                        
 
                         <nav aria-label="Page navigation example" style="margin-top: 20px">
                             <ul class="pagination justify-content-end">
@@ -203,6 +209,10 @@
         function delete_landmark(id) {
             $('#id_data').val(id);
             $('#delete_it').submit();
+        }
+        function print_contacUs(params) {
+            $('#id_data1').val(params);
+            $('#print_it').submit();
         }
         // function update_land() {
         // alert($('#img').val());

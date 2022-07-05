@@ -102,6 +102,7 @@ class contactUs_controller extends Controller
             $reply = $request->reply;
             $get_data = [
                 'status' =>  2,
+                'answere' =>  $reply,
                 'updated_at' => date("Y-m-d H:i:s"),
             ];
             $data = [

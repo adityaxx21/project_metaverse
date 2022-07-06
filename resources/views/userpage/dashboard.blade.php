@@ -411,6 +411,26 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="accordion-item mb-3">
+                                                  <h5 class="accordion-header" id="headingThree">
+                                                      <button class="accordion-button border-bottom font-weight-bold"
+                                                          type="button" data-bs-toggle="collapse"
+                                                          data-bs-target="#collapseThree" aria-expanded="false"
+                                                          aria-controls="collapseThree">
+                                                         lorem Ipsum Del
+                                                          <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"
+                                                              aria-hidden="true"></i>
+                                                          <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"
+                                                              aria-hidden="true"></i>
+                                                      </button>
+                                                  </h5>
+                                                  <div id="collapseThree" class="accordion-collapse collapse"
+                                                      aria-labelledby="headingThree" data-bs-parent="#accordionRental">
+                                                      <div class="accordion-body text-sm opacity-8 text-dark">
+                                                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur dolorum nemo inventore dicta sequi consequatur aspernatur voluptatem laboriosam hic eveniet quisquam ad harum, nesciunt quos architecto, quis saepe nobis. Sint?
+                                                      </div>
+                                                  </div>
+                                              </div>
                                             </div>
                                         </div>
                                     </div>

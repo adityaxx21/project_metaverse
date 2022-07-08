@@ -14,8 +14,8 @@
                                 <div class="ms-md-auto pe-md-3 d-flex align-items-right">
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-success" style="width: 200px;"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa fa-plus "></i>
-                                        Tambah Data</button>
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa fa-plus"></i>
+                                        Tambah Properti</button>
                                 </div>
                             </div>
 
@@ -39,7 +39,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Metaverse Properti </h5>
                                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -84,8 +84,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn bg-gradient-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button class="btn bg-gradient-primary" onclick="$('#inputMetaprop').submit()">Save
-                                            changes</button>
+                                        <button class="btn bg-gradient-primary" onclick="$('#inputMetaprop').submit()">Tambah Properti</button>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +96,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Update Metaverse Properti</h5>
                                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -204,11 +203,11 @@
                                                 <button type="button" class="btn btn-warning"
                                                     onclick="get_data({{ $item->id }})"><i
                                                         class="fa-solid fa-file-pen"></i>
-                                                    Update Data</button>
+                                                    Update Properti</button>
                                                 <button type="button" class="btn btn-danger"
                                                     onclick="delete_properties({{ $item->id }})"> <i
                                                         class="fa-solid fa-ban"></i>
-                                                    Delete Data</button>
+                                                    Delete Properti</button>
                                             </td>
                                         </tr>
                                     @endforeach

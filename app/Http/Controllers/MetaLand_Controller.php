@@ -17,8 +17,8 @@ class MetaLand_Controller extends Controller
         } else {
             $cond = [['is_deleted', 1]];
         }
-        $page = 2;
-        $data['Page'] = "Kelola Metavers Land";
+        $page = 4;
+        $data['Page'] = "Kelola Metaverse Land";
         $data['landmark'] = maps_metaverse::where($cond)->paginate($page);
         $data['get_total'] = (maps_metaverse::where($cond)->count());
         $data['page_now'] = $request->page;

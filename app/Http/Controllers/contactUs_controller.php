@@ -59,7 +59,7 @@ class contactUs_controller extends Controller
             } else {
                 $cond = [['is_deleted', 1]];
             }
-            $page = 3;
+            $page = 4;
             $data['Page'] = "Kelola Email";
             $data['mail'] = tb_mail::where($cond)->paginate($page);
             $data['get_total'] = tb_mail::where($cond)->count();
@@ -147,7 +147,7 @@ class contactUs_controller extends Controller
         $dompdf->render();
 
         // Output the generated PDF to Browser
-        $dompdf->stream("Laporan Transaksi");
+        $dompdf->stream("Laporan Balas Contact Us");
         return view("adminpage.laporan.downloadLaporan",$data);
         // return redirect('/');
         }

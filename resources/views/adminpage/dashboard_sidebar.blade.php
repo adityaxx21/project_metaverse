@@ -2,21 +2,22 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html "
+            <a class="navbar-brand" style="margin-left: -15px" href=""
                 target="_blank">
                 <img
-                    src="{{ URL::asset('storage/image/adminpage/logo-ct-dark.png')}}" class="navbar-brand-img h-100" alt="main_logo') }}">
-                <span class="ms-1 font-weight-bold">Soft UI Dashboard</span>
+                    src="{{ URL::asset('storage/image/adminpage/meta-icon.png')}}" class="navbar-brand-img h-100" alt="main_logo') }}">
+                <span class="ms-1 font-weight-bold">MetaLand Dashboard</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0">
-        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+        <div class="collapse navbar-collapse  w-auto h-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link  {{ (request()->is('adminpage*')) ? 'active' : '' }}" href="/adminpage">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
+                            <i class="ni ni-briefcase-24 text-lg opacity-10" aria-hidden="true"></i>
+                            <!--<svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>shop </title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -34,7 +35,7 @@
                                         </g>
                                     </g>
                                 </g>
-                            </svg>
+                            </svg>-->
                         </div>
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
@@ -43,7 +44,8 @@
                     <a class="nav-link {{ (request()->is('kelolaMetaland*')) ? 'active' : '' }} " href="/kelolaMetaland">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
+                            <i class="ni ni-map-big text-lg opacity-10" aria-hidden="true"></i>
+                            <!--<svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>office</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -61,7 +63,7 @@
                                         </g>
                                     </g>
                                 </g>
-                            </svg>
+                            </svg>-->
                         </div>
                         <span class="nav-link-text ms-1">Kelola Meta Land</span>
                     </a>
@@ -70,7 +72,8 @@
                     <a class="nav-link {{ (request()->is('kelolaMetaprop*')) ? 'active' : '' }} " href="/kelolaMetaprop">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
+                            <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
+                            <!--<svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>office</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -88,16 +91,17 @@
                                         </g>
                                     </g>
                                 </g>
-                            </svg>
+                            </svg>-->
                         </div>
-                        <span class="nav-link-text ms-1">Kelola Meta Properti</span>
+                        <span class="nav-link-text ms-1">Kelola Meta Property</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link  {{ (request()->is('kelolaAkun*')) ? 'active' : '' }}" href="/kelolaAkun">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <i class="ni ni-single-02 text-lg opacity-10" aria-hidden="true"></i>
+                            <!--<svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>customer-support</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                   <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -110,7 +114,7 @@
                                     </g>
                                   </g>
                                 </g>
-                              </svg>
+                              </svg>-->
                         </div>
                         <span class="nav-link-text ms-1">Kelola Akun</span>
                     </a>
@@ -118,8 +122,9 @@
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('contactUs_admin*')) ? 'active' : '' }}" href="/contactUs_admin">
                         <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            class="icon icon-shape icon-sm shadow border-radius-md bg-gray text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-email-83 text-lg opacity-10" aria-hidden="true"></i>
+                            <!--<svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>customer-support</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                   <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -132,7 +137,7 @@
                                     </g>
                                   </g>
                                 </g>
-                              </svg>
+                              </svg>-->
                         </div>
                         <span class="nav-link-text ms-1">Balas Contact Us</span>
                     </a>
@@ -141,7 +146,8 @@
                     <a class="nav-link" href="/logout">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <i class="ni ni-user-run text-lg opacity-10" aria-hidden="true"></i>
+                            <!--<svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>customer-support</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                   <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -154,7 +160,7 @@
                                     </g>
                                   </g>
                                 </g>
-                              </svg>
+                              </svg>-->
                         </div>
                         <span class="nav-link-text ms-1">Log Out</span>
                     </a>

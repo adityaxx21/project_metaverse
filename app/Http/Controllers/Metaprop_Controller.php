@@ -17,8 +17,8 @@ class Metaprop_Controller extends Controller
         } else {
             $cond = [['is_deleted', 1]];
         }
-        $page = 3;
-        $data['Page'] = "Kelola Metavers Properti";
+        $page = 4;
+        $data['Page'] = "Kelola Metaverse Properti";
         $data['properties'] = prop_metaverse::where($cond)->paginate($page);
         $data['get_total'] = prop_metaverse::where($cond)->count();
         $data['page_now'] = $request->page;

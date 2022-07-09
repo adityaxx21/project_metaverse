@@ -15,7 +15,7 @@
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-success" style="width: 200px;"
                                         data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa fa-plus "></i>
-                                        Tambah Data</button>
+                                        Tambah Akun</button>
                                 </div>
                             </div>
 
@@ -38,7 +38,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Kelola Akun</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Akun Administrator</h5>
                                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -74,7 +74,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn bg-gradient-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn bg-gradient-primary" onclick="$('#createAccount').submit()">Save changes</button>
+                                        <button type="button" class="btn bg-gradient-primary" onclick="$('#createAccount').submit()">Tambah Akun</button>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Kelola Akun</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Update Akun</h5>
                                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -185,12 +185,12 @@
                                             <td class="align-middle">
                                                 <button type="button" class="btn btn-warning"
                                                     onclick="get_data({{ $item->id }})"
-                                                    {{ $item->role_id != 1 ? 'disabled' : '' }}><i
-                                                        class="fa-solid fa-file-pen"> </i> Update Data</button>
+                                                    {{ $item->role_id != 1 ? 'enabled' : '' }}><i
+                                                        class="fa-solid fa-file-pen"> </i> Update Akun</button>
                                                 <button type="button" class="btn btn-danger"
-                                                    {{ $item->role_id != 1 ? 'disabled' : '' }}
+                                                    {{ $item->role_id != 1 ? 'enabled' : '' }}
                                                     onclick="delete_account({{$item->id}})"><i
-                                                        class="fa-solid fa-ban"></i> Delete Data</button>
+                                                        class="fa-solid fa-ban"></i> Delete Akun</button>
                                             </td>
                                         </tr>
                                     @endforeach

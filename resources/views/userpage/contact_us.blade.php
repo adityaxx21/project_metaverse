@@ -36,7 +36,7 @@
         <div class="col">
           <div class="card-plain h-100">
             <div class="card-body pb-0 ps-5">
-                <div class="col mt-5 my-auto "  >
+                <div class="col mt-4 my-auto"  >
                   <h4 class="text-primary text-gradient mb-0 fadeIn1 fadeInBottom">Contact Us</h4>
                   <h1 class="fadeIn2 fadeInBottom">How Can We Help?</h1>
                   <p class="lead opacity-8 fadeIn3 fadeInBottom">Please visit FAQ's page related to your inquiry. If you don't find what you need, fill out our contact form.</p>

@@ -73,9 +73,9 @@ class Register_Controller extends Controller
         ];
         user_reg::create($user);
         if ($role == 1) {
-            return redirect('/kelolaAkun')->with('alert-notif', 'Pendataran Berhasil');
+            return redirect('/kelolaAkun')->with('alert-notif', 'Pendaftaran Berhasil');
         } elseif ($role == 2) {
-            return redirect('/login')->with('alert-notif', 'Pendataran Berhasil');
+            return redirect('/login')->with('alert-notif', 'Pendaftaran Berhasil');
         }
     }
 
@@ -93,7 +93,7 @@ class Register_Controller extends Controller
             'created_at' => date("Y-m-d H:i:s"),
         ];
         user_reg::create($user);
-        return redirect('/login')->with('alert-notif', 'Pendataran Berhasil');
+        return redirect('/login')->with('alert-notif', 'Pendaftaran Berhasil');
     }
 
     public function updateAccountAdmin(Request $request)

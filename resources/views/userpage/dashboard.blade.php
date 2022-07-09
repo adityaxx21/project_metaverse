@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.6
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 @extends('userpage.layout')
 @section('content')
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
@@ -136,7 +122,7 @@
                                 <div class="row">
                                   <div class="col-lg-6">
                                     <div class="info-horizontal bg-light border-radius-xl p-5">
-                                      <div class="icon">
+                                      <<div class="icon">
                                         <svg class="text-info" width="25px" height="25px" viewBox="0 0 40 40" version="1.1"
                                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                           <title>spaceship</title>
@@ -171,7 +157,7 @@
                                           Learn more
                                           <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                                         </a>
-                                      </div>
+                                      </div>-->
                                     </div>
                                   </div>
                                   <div class="col-lg-6">
@@ -211,7 +197,7 @@
                                           Learn more
                                           <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                                         </a>
-                                      </div>
+                                      </div>-->
                                     </div>
                                   </div>
                                 </div>
@@ -328,16 +314,14 @@
             </div>
             <div class="container-fluid py-2">
                 <div class="card">
-
                     <div class="card-body">
                         <div class="row mb-2 mx-2">
-
                             <div class="accordion-1">
                                 <div class="container-fluid py-2">
                                     <div class="row my-auto">
                                         <div class="col-md-6 mx-auto text-center">
                                             <h2>About Metaverse</h2>
-                                            <p>explanation of terms related to metaverse</p>
+                                            <p>Explanation of terms related to Metaverse</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -359,8 +343,15 @@
                                                     </h5>
                                                     <div id="collapseOne" class="accordion-collapse collapse"
                                                         aria-labelledby="headingOne" data-bs-parent="#accordionRental">
-                                                        <div class="accordion-body text-sm opacity-8 text-dark">
-                                                            Metaverse ...
+                                                        <div class="accordion-body text-sm opacity-8 text-dark" style="text-align:justify">
+                                                          Istilah Metaverse mulai ramai diperbincangkan ketika CEO Facebook Mark Zuckerberg mengubah nama perusahaan menjadi “Meta”. Latar belakang perubahan nama dipelopori keinginannya untuk menciptakan dunia virtual yang menggabungkan teknologi Virtual Reality dan Augmented Reality melalui metaverse.<br><br>
+                                                          AR atau Augmented Reality adalah teknologi yang menggabungkan benda maya dua dimensi dan ataupun tiga dimensi ke dalam sebuah lingkungan nyata lalu memproyeksikan benda-benda tersebut secara realitas dalam waktu nyata.Sementara Virtual Reality (VR) adalah teknologi yang mampu menciptakan simulasi. 
+                                                          Dimana simulasi ini bisa sama persis dengan dunia nyata, seperti suasana saat seorang berjalan mengelilingi kota dan segala bentuk aktivitas lainnya. Untuk menghadirkan dunia metaverse, teknologi AR harus dipadukan dengan teknologi VR dan didukung oleh Artificial Intelligence (AI) yaitu sebuah teknologi 
+                                                          yang memungkinkan sistem komputer, perangkat lunak, program dan robot untuk “berpikir” secara cerdas layaknya manusia.<br><br>
+                                                          Metaverse merupakan istilah yang berasal dari dunia industri teknologi. Istilah ini telah ditulis oleh Neal Stephenson di novel Snow Crash pada 1992. Jadi, dapat dikatakan metaverse bukan istilah yang baru dalam kehidupan. Secara sederhana metaverse didefinisikan sebagai sebuah konsep dunia virtual di mana 
+                                                          seseorang dapat membuat dan menjelajah dengan pengguna internet lainnya dalam bentuk avatar dirinya sendiri. Hal-hal yang bisa dilakukan oleh penggunanya di metaverse antara lain horizon, avatar, kegiatan virtual, kumpul bersama, membeli sesuatu, dan masuk ke dalam game. Horizon adalah dunia virtual yang dapat 
+                                                          memilih atau membuat tanah sendiri seperti rumah, kantor, taman, pantai, pegunungan, luar angkasa, atau tempat manapun yang ingin dituju. Avatar berarti pengguna dapat menciptakan avatarnya sendiri sesuai keinginan seperti avatar manusia dengan gender laki-laki atau perempuan lengkap dengan pakaian ataupun wujud 
+                                                          lain misalkan robot, vampir, zombie, dan lain-lain. Kegiatan virtual adalah pengguna dapat melakukan aktivitas yang sama di dunia nyata seperti berenang, berolahraga, bertransaksi, bekerja, dan lain-lain.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -370,7 +361,7 @@
                                                             type="button" data-bs-toggle="collapse"
                                                             data-bs-target="#collapseTwo" aria-expanded="false"
                                                             aria-controls="collapseTwo">
-                                                            What is Metaland?
+                                                            What is Non-fungible Token?
                                                             <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"
                                                                 aria-hidden="true"></i>
                                                             <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"
@@ -379,15 +370,10 @@
                                                     </h5>
                                                     <div id="collapseTwo" class="accordion-collapse collapse"
                                                         aria-labelledby="headingTwo" data-bs-parent="#accordionRental">
-                                                        <div class="accordion-body text-sm opacity-8 text-dark">
-                                                            Metaland ...
-                                                            <br>
-                                                            We're not always in the position that we want to be at. We're
-                                                            constantly growing. We're constantly making mistakes. We're
-                                                            constantly trying to express ourselves and actualize our dreams.
-                                                            If you have the opportunity to play this game of life you need
-                                                            to appreciate every moment. A lot of people don't appreciate the
-                                                            moment until it's passed.
+                                                        <div class="accordion-body text-sm opacity-8 text-dark" style="text-align:justify">
+                                                        NFT (Non-Fungible Token) pertama kali diperkenalkan pada tahun 2014 oleh sebuah platform bernama Counterparty, dengan NFT pertama yang dibuat berjudul “Quantum”, kini karya tersebut bernilai 7 juta USD. Melihat trendnya maka NFT diprediksi dapat diimplementasikan ke dalam berbagai jenis hal lain, termasuk di antaranya informasi terekam apapun dalam bentuk digital. 
+                                                        NFT sederhananya adalah sekumpulan data yang tersimpan pada buku besar digital yang kita kenal sebagai blockchain. Sama seperti halnya mata uang digital seperti bitcoin, NFT berjalan pada platform blockchain. Bedanya, jika pada mata uang kripto seperti bitcoin, koin tersebut yang sebenarnya adalah berupa kumpulan kode yang dapat dipecah menjadi banyak bagian, sedangkan NFT bersifat non-fungible. 
+                                                        Yaitu tidak dapat dipecah layaknya koin. Karena pada NFT, kumpulan kode tersebut dapat diembedd dengan arsip digital sehingga membuat kumpulan kode pada NFT menjadi unik antara satu dengan lainnya. Hal ini menjadi pembeda paling dasar antara NFT dengan mata uang kripto konvensional.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -397,7 +383,7 @@
                                                             type="button" data-bs-toggle="collapse"
                                                             data-bs-target="#collapseThree" aria-expanded="false"
                                                             aria-controls="collapseThree">
-                                                            What is Property in Metaverse?
+                                                            Land in The Metaverse
                                                             <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"
                                                                 aria-hidden="true"></i>
                                                             <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"
@@ -406,8 +392,32 @@
                                                     </h5>
                                                     <div id="collapseThree" class="accordion-collapse collapse"
                                                         aria-labelledby="headingThree" data-bs-parent="#accordionRental">
-                                                        <div class="accordion-body text-sm opacity-8 text-dark">
-                                                            Property?
+                                                        <div class="accordion-body text-sm opacity-8 text-dark" style="text-align:justify">
+                                                        Tanah di Metaverse adalah NFT yang mewakili bagian digital unik dari real estate. Setiap tanah dapat dibeli dan dijual terpisah atau bersama-sama sebagai estate. Masyarakat/investor dapat membeli tanah karena dua alasan yaitu berharap untuk menghasilkan aliran pendapatan atau berharap untuk menjual kembali dengan harga yang lebih tinggi. 
+                                                        Masyarakat juga dapat membangun game atau pengalaman interaktif di tanah tersebut dengan harapan memperoleh pendapatan dari pengunjung lainnya. Mereka dapat memilih untuk menjual kembali tanah di pasar sekunder seperti OpenSea (pasar untuk NFT).<br><br>
+                                                        Penulis berfokus pada pengembalian investasi tanah menggunakan analisis real estate seperti regresi harga hedonis dan indeks harga. Dengan memeriksa penjualan berulang (bundel yang sama persis seperti tanah yang dibeli atau dicetak dan kemudian dijual kembali) kita dapat menilai dengan lebih akurat apakah membeli dan menjual kembali tanah adalah investasi yang baik dalam berbagai denominasi
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item mb-3">
+                                                    <h5 class="accordion-header" id="headingFour">
+                                                        <button class="accordion-button border-bottom font-weight-bold"
+                                                            type="button" data-bs-toggle="collapse"
+                                                            data-bs-target="#collapseFour" aria-expanded="false"
+                                                            aria-controls="collapseFour">
+                                                            Metaverse Property
+                                                            <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"
+                                                                aria-hidden="true"></i>
+                                                            <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"
+                                                                aria-hidden="true"></i>
+                                                        </button>
+                                                    </h5>
+                                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingFour" data-bs-parent="#accordionRental">
+                                                        <div class="accordion-body text-sm opacity-8 text-dark" style="text-align:justify">
+                                                        Membeli properti di metaverse bekerja dengan cara yang hampir sama dengan membeli NFT. Akta kepemilikan anda adalah bagian unik dari kode di blockchain. Kode ini yang menyatakan kepemilikan atau hak anda atas properti digital itu. Jadi untuk memulai membeli properti metaverse anda, anda harus memiliki dompet kripto digital anda sendiri. 
+                                                        Beberapa platform menggunakan cryptocurrency tertentu untuk transaksi mereka, jadi anda mungkin ingin memeriksanya sebelum mendaftar untuk dompet baru. Kemudian, pergilah ke platform metaverse virtual dan daftar untuk membuat akun. Anda harus menautkan dompet digital anda ke platform untuk membeli properti dan aset lainnya. 
+                                                        Seperti properti dunia nyata, anda juga dapat membeli properti di metaverse melalui broker dan manajer properti. Tidak seperti di dunia nyata, broker metaverse tidak memerlukan lisensi dan tidak berada di bawah peraturan. Jadi pastikan anda bertransaksi dengan yang terpercaya.
                                                         </div>
                                                     </div>
                                                 </div>

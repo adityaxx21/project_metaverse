@@ -3,12 +3,8 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
-
                 <div class="card mb-4">
-
-
                     <div class="card-body px-0 pt-0 pb-2">
-
                         <div class="row" style="margin:20px">
                             <div class="col">
                                 <div class="ms-md-auto pe-md-3 d-flex align-items-right">
@@ -30,16 +26,13 @@
                                     </form>
                             </div>
                         </div>
-
-
-
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Metaverse Land</h5>
                                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -84,8 +77,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn bg-gradient-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button class="btn bg-gradient-primary" onclick="$('#inputMetaland').submit()">Save
-                                            changes</button>
+                                        <button class="btn bg-gradient-primary" onclick="$('#inputMetaland').submit()">Tambah Data</button>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +89,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Update Metaverse Land</h5>
                                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>

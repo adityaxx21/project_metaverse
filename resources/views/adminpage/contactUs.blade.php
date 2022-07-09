@@ -29,7 +29,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Balas Pesan</h5>
                                         <button type="button" class="btn-close text-dark" data-bs-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -65,8 +65,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn bg-gradient-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button class="btn bg-gradient-primary" onclick="$('#updateMetaland').submit()">Save
-                                            changes</button>
+                                        <button class="btn bg-gradient-primary" onclick="$('#updateMetaland').submit()">Kirim</button>
                                     </div>
                                 </div>
                             </div>
@@ -120,13 +119,13 @@
                                             <td class="align-middle">
                                                 <button type="button" class="btn btn-warning"
                                                     onclick="get_data({{ $item->id }})"><i
-                                                        class="fa-solid fa-file-pen"></i> Update Data</button>
+                                                        class="fa-solid fa-file-pen"></i> Reply Message</button>
                                                 <button type="button" class="btn btn-danger"
                                                     onclick="delete_landmark({{ $item->id }})"> <i
-                                                        class="fa-solid fa-ban"></i> Delete Data</button>
+                                                        class="fa-solid fa-ban"></i> Delete Message</button>
                                                     <button type="button" class="btn btn-primary"
                                                     onclick="print_contacUs({{ $item->id }})"> <i
-                                                        class="fa-solid fa-print"></i> Cetak Data</button>
+                                                        class="fa-solid fa-print"></i>Print</button>
                                             </td>
                                         </tr>
                                     @endforeach
